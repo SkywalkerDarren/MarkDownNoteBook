@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+def configs = rootProject.extensions.getByName("ext")
+
+android {
+    compileSdkVersion configs.android.compileSdkVersion
+    buildToolsVersion configs.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "io.github.skywalkerdarren.markdowneditior"
+        minSdkVersion configs.android.minSdkVersion
+        targetSdkVersion configs.android.compileSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility jdkVersion
+        targetCompatibility jdkVersion
+    }
+    kotlinOptions {
+        jvmTarget = jdkVersion
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation configs.dependencies["kotlin-stdlib"]
+    implementation configs.dependencies["core-ktx"]
+    implementation configs.dependencies["appcompat"]
+    implementation configs.dependencies["material"]
+    implementation configs.dependencies["constraintlayout"]
+    implementation configs.dependencies["lifecycle-livedata"]
+    implementation configs.dependencies["lifecycle-viewmodel"]
+    implementation configs.dependencies["navigation-fragment"]
+    implementation configs.dependencies["navigation-ui"]
+    implementation configs.dependencies["room-runtime"]
+    implementation configs.dependencies["room-ktx"]
+    implementation configs.dependencies["fragment"]
+    implementation configs.dependencies["activity"]
+    implementation configs.dependencies["work"]
+    implementation configs.dependencies["recyclerview"]
+    implementation configs.dependencies["coordinatorlayout"]
+    implementation configs.dependencies["drawerlayout"]
+
+
+    kapt configs.dependencies["room-compiler"]
+
+
+    testImplementation configs.dependencies["room-testing"]
+    testImplementation configs.dependencies["junit"]
+    androidTestImplementation configs.dependencies["junit-ext"]
+    androidTestImplementation configs.dependencies["espresso"]
+    androidTestImplementation configs.dependencies["work-testing"]
+}
