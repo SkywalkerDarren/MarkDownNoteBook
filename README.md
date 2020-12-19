@@ -1,6 +1,6 @@
-# MarkDownEditor(developing)
+# MarkDownNoteBook(developing)
 
-A markdown editor (or notebook?).
+A markdown notebook.
 
 The editor base on recyclerview to render markdown to rich text.
 

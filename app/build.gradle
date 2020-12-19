@@ -13,7 +13,7 @@ android {
     buildToolsVersion configs.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "io.github.skywalkerdarren.markdowneditior"
+        applicationId "io.github.skywalkerdarren.markdownnotebook"
         minSdkVersion configs.android.minSdkVersion
         targetSdkVersion configs.android.compileSdkVersion
         versionCode 1
