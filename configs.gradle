@@ -10,7 +10,7 @@ ext {
             "room"              : "2.2.5",
             "junit"             : "4.+",
             "espresso"          : "3.3.0",
-            "junit-ext"         : "1.1.2",
+            "junitExt"         : "1.1.2",
             "appcompat"         : "1.2.0",
             "material"          : "1.2.1",
             "constraintlayout"  : "2.0.4",
@@ -40,7 +40,7 @@ ext {
             "navigation-features"   : "androidx.navigation:navigation-dynamic-features-fragment:$navVersion",
 
             "junit"                 : "junit:junit:$versions.junit",
-            "junit-ext"             : "androidx.test.ext:junit:$versions.junit-ext",
+            "junit-ext"             : "androidx.test.ext:junit:$versions.junitExt",
             "espresso"              : "androidx.test.espresso:espresso-core:$versions.espresso",
 
             "room-runtime"          : "androidx.room:room-runtime:$versions.room",
