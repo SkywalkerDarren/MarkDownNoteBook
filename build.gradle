@@ -6,6 +6,7 @@ buildscript {
         kotlinVersion = "1.4.20"
         jdkVersion = 1.8
         navVersion = "2.3.2"
+        kotlin_version = '1.4.20'
     }
     repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }

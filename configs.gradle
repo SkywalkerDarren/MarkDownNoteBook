@@ -6,11 +6,12 @@ ext {
     ]
 
     versions = [
+            "coroutine"         : "1.3.9",
             "core"              : "1.3.2",
             "room"              : "2.2.5",
             "junit"             : "4.+",
             "espresso"          : "3.3.0",
-            "junitExt"         : "1.1.2",
+            "junitExt"          : "1.1.2",
             "appcompat"         : "1.2.0",
             "material"          : "1.2.1",
             "constraintlayout"  : "2.0.4",
@@ -22,12 +23,17 @@ ext {
             "coordinatorlayout" : "1.1.0",
             "drawerlayout"      : "1.1.1",
             "coil"              : "1.1.0",
+            "webdav"            : "0.7",
+            "okhttp"            : "4.9.0",
+            "retrofit"          : "2.9.0",
+
     ]
 
     dependencies = [
             "kotlin-stdlib"         : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            "coroutine"             : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine",
             "core-ktx"              : "androidx.core:core-ktx:$versions.core",
-            "appcompat"             :"androidx.appcompat:appcompat:$versions.appcompat",
+            "appcompat"             : "androidx.appcompat:appcompat:$versions.appcompat",
 
             "material"              : "com.google.android.material:material:$versions.material",
             "constraintlayout"      : "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
@@ -55,8 +61,13 @@ ext {
             "recyclerview"          : "androidx.recyclerview:recyclerview:$versions.recyclerview",
             "coordinatorlayout"     : "androidx.coordinatorlayout:coordinatorlayout:$versions.coordinatorlayout",
             "drawerlayout"          : "androidx.drawerlayout:drawerlayout:$versions.drawerlayout",
+
+            "webdav"                : "com.thegrizzlylabs.sardine-android:sardine-android:$versions.webdav",
             "coil"                  : "io.coil-kt:coil:$versions.coil",
 
+            "retrofit"              : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            "okhttp"                : "com.squareup.okhttp3:okhttp:$versions.okhttp",
+            "mockWebServer"         : "com.squareup.okhttp3:mockwebserver:$versions.okhttp",
     ]
 
 }

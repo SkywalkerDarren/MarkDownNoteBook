@@ -8,9 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MarkDownNoteBook">
+        android:theme="@style/Theme.MarkDownNoteBook"
+        android:name=".NoteBookApplication">
+        <activity android:name=".ui.detail.DetailActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MarkDownNoteBook.NoActionBar">
             <intent-filter>

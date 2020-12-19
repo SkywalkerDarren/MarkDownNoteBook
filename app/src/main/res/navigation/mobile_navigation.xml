@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_notebooks"
-        android:name="io.github.skywalkerdarren.markdownnotebook.ui.home.HomeFragment"
+        android:name="io.github.skywalkerdarren.markdownnotebook.ui.notes.NotesFragment"
         android:label="@string/menu_notebooks"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_notes" />
 
     <fragment
         android:id="@+id/nav_trash"
-        android:name="io.github.skywalkerdarren.markdownnotebook.ui.gallery.GalleryFragment"
+        android:name="io.github.skywalkerdarren.markdownnotebook.ui.trash.TrashFragment"
         android:label="@string/menu_trash"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_trash" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="io.github.skywalkerdarren.markdownnotebook.ui.slideshow.SlideshowFragment"
+        android:name="io.github.skywalkerdarren.markdownnotebook.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>

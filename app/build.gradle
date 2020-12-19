@@ -42,8 +42,9 @@ android {
 }
 
 dependencies {
-
     implementation configs.dependencies["kotlin-stdlib"]
+    implementation configs.dependencies["coroutine"]
+    // Android
     implementation configs.dependencies["core-ktx"]
     implementation configs.dependencies["appcompat"]
     implementation configs.dependencies["material"]
@@ -61,10 +62,23 @@ dependencies {
     implementation configs.dependencies["coordinatorlayout"]
     implementation configs.dependencies["drawerlayout"]
 
+    // third party
+    implementation configs.dependencies["coil"]
+    implementation configs.dependencies["webdav"]
+    implementation configs.dependencies["okhttp"]
+    implementation configs.dependencies["retrofit"]
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
+    // kapt
     kapt configs.dependencies["room-compiler"]
 
-
+    // test
+    testImplementation configs.dependencies["mockWebServer"]
     testImplementation configs.dependencies["room-testing"]
     testImplementation configs.dependencies["junit"]
     androidTestImplementation configs.dependencies["junit-ext"]
