@@ -8,6 +8,8 @@
     android:paddingTop="8dp"
     android:paddingEnd="16dp"
     android:paddingBottom="8dp"
+    android:background="@color/drawer_bg"
+    tools:background="@color/gray_700"
     tools:ignore="UseAppTint">
 
     <ImageView
@@ -15,7 +17,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         tools:src="@drawable/ic_notebook"
-        android:tint="@color/secondaryLightColor"
+        android:tint="@color/gray_100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ivTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +32,16 @@
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSubIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        tools:src="@drawable/ic_notebook"
+        android:tint="@color/gray_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

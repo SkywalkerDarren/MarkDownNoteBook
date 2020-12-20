@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.MarkDownNoteBook.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
+        <io.github.skywalkerdarren.markdownnotebook.ui.views.NoteToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MarkDownNoteBook.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:background="@color/gray_900"
+            app:icon_back="@drawable/ic_menu" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

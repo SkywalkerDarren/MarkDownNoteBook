@@ -2,19 +2,19 @@ package io.github.skywalkerdarren.markdownnotebook.ui.main
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import io.github.skywalkerdarren.markdownnotebook.R
 import io.github.skywalkerdarren.markdownnotebook.databinding.ActivityMainBinding
+import io.github.skywalkerdarren.markdownnotebook.databinding.AppBarMainBinding
 import io.github.skywalkerdarren.markdownnotebook.ui.base.BaseActivity
+import io.github.skywalkerdarren.markdownnotebook.utils.string
 
 class MainActivity : BaseActivity() {
     companion object {
@@ -22,8 +22,8 @@ class MainActivity : BaseActivity() {
     }
 
     private val viewModel by viewModels<MainViewModel>()
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var containerBinding: AppBarMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,35 +43,21 @@ class MainActivity : BaseActivity() {
 
     private fun setupDrawerLayout(drawerLayout: DrawerLayout) {
         val navController = findNavController(R.id.nav_host_fragment)
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_notebooks, R.id.nav_trash, R.id.nav_settings
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-                Log.d(TAG, "slide: $slideOffset")
-            }
-
-            override fun onDrawerOpened(drawerView: View) {
-                Log.d(TAG, "open")
-            }
-
-            override fun onDrawerClosed(drawerView: View) {
-                Log.d(TAG, "close")
-            }
-
-            override fun onDrawerStateChanged(newState: Int) {
-                Log.d(TAG, "newState: $newState")
-            }
-        })
+        binding.container.toolbar.setBackClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
 
         binding.itemNotebooks.apply {
+            root.isSelected = true
+            root.dispatchSetSelected(true)
+            binding.container.toolbar.setTitle(R.string.menu_notebooks.string())
+
             ivIcon.setImageResource(R.drawable.ic_notebook)
-            ivTitle.text = getString(R.string.menu_notebooks)
+            ivTitle.text = R.string.menu_notebooks.string()
             root.setOnClickListener {
+                binding.container.toolbar.setTitle(R.string.menu_notebooks.string())
+                selectItem(root)
                 Log.d(TAG, "itemNotebooks")
                 navController.navigate(R.id.nav_notebooks)
                 drawerLayout.closeDrawers()
@@ -82,6 +68,8 @@ class MainActivity : BaseActivity() {
             ivIcon.setImageResource(R.drawable.ic_trash)
             ivTitle.text = getString(R.string.menu_trash)
             root.setOnClickListener {
+                binding.container.toolbar.setTitle(R.string.menu_trash.string())
+                selectItem(root)
                 Log.d(TAG, "itemTrash")
                 navController.navigate(R.id.nav_trash)
                 drawerLayout.closeDrawers()
@@ -92,15 +80,25 @@ class MainActivity : BaseActivity() {
             ivIcon.setImageResource(R.drawable.ic_setting)
             ivTitle.text = getString(R.string.menu_settings)
             root.setOnClickListener {
+                binding.container.toolbar.setTitle(R.string.menu_settings.string())
+                selectItem(root)
                 Log.d(TAG, "itemSettings")
                 navController.navigate(R.id.nav_settings)
                 drawerLayout.closeDrawers()
             }
         }
+
+
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    private fun selectItem(item: ViewGroup) {
+        binding.itemNotebooks.root.isSelected = false
+        binding.itemTrash.root.isSelected = false
+        binding.itemSettings.root.isSelected = false
+        binding.itemNotebooks.root.dispatchSetSelected(false)
+        binding.itemTrash.root.dispatchSetSelected(false)
+        binding.itemSettings.root.dispatchSetSelected(false)
+        item.isSelected = true
+        item.dispatchSetSelected(true)
     }
 }

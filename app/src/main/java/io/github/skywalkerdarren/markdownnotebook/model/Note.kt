@@ -2,6 +2,7 @@ package io.github.skywalkerdarren.markdownnotebook.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.text.SimpleDateFormat
 import java.util.*
 
 @Entity
@@ -27,5 +28,9 @@ data class Note(
                 }
             }
         }
+    }
+
+    fun formattedDate(): String {
+        return SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(date))
     }
 }

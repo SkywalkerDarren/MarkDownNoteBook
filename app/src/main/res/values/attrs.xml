@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NoteToolbar">
+        <attr name="text_back" format="string" />
+        <attr name="text_title" format="string" />
+        <attr name="text_menu" format="string" />
+        <attr name="color_back" format="color" />
+        <attr name="color_title" format="color" />
+        <attr name="color_menu" format="color" />
+        <attr name="color_sub_menu" format="color" />
+        <attr name="icon_back" format="reference" />
+        <attr name="icon_title" format="reference" />
+        <attr name="icon_menu" format="reference" />
+        <attr name="icon_sub_menu" format="reference" />
+    </declare-styleable>
+</resources>
