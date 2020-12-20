@@ -12,6 +12,7 @@ class SettingsFragment : BaseFragment() {
 
     private val settingsViewModel by viewModels<SettingsViewModel>()
     private lateinit var binding: FragmentSettingsBinding
+    override val TAG = "SettingsFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,

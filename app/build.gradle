@@ -79,6 +79,7 @@ dependencies {
     implementation configs.dependencies["okhttp"]
     implementation configs.dependencies["retrofit"]
     implementation configs.dependencies["utilcodex"]
+    implementation configs.dependencies["brvah"]
 
     // kapt
     kapt configs.dependencies["room-compiler"]

@@ -27,6 +27,7 @@ ext {
             "okhttp"            : "4.9.0",
             "retrofit"          : "2.9.0",
             "utilcodex"         : "1.30.5",
+            "brvah"             : "3.0.4",
 
     ]
 
@@ -66,6 +67,7 @@ ext {
             "webdav"                : "com.thegrizzlylabs.sardine-android:sardine-android:$versions.webdav",
             "coil"                  : "io.coil-kt:coil:$versions.coil",
             "utilcodex"             : "com.blankj:utilcodex:$versions.utilcodex",
+            "brvah"                 : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.brvah",
 
             "retrofit"              : "com.squareup.retrofit2:retrofit:$versions.retrofit",
             "okhttp"                : "com.squareup.okhttp3:okhttp:$versions.okhttp",

@@ -11,21 +11,32 @@ import io.github.skywalkerdarren.markdownnotebook.ui.base.BaseFragment
 class NotesFragment : BaseFragment() {
 
     private val homeViewModel by viewModels<NotesViewModel>()
-    private lateinit var binding: FragmentNotesBinding
+    private var binding: FragmentNotesBinding? = null
+    override val TAG = "NotesFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = FragmentNotesBinding.inflate(layoutInflater, container, false)
         homeViewModel.text.observe(viewLifecycleOwner, ::handleViewState)
-        return binding.root
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.rvNotes?.adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
     private fun handleViewState(viewState: NotesViewState) {
         viewState.text?.handleIfNotHandled {
-            binding.textHome.text = it
+            binding?.textHome?.text = it
         }
     }
 }

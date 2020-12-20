@@ -12,6 +12,7 @@ class TrashFragment : BaseFragment() {
 
     private val trashViewModel by viewModels<TrashViewModel>()
     private lateinit var binding: FragmentTrashBinding
+    override val TAG = "TrashFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
